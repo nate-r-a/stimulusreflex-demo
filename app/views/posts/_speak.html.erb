@@ -1,0 +1,9 @@
+<%= puts "!!!!!!!!!!" %>
+<script>
+console.log("123")
+
+var msg = new SpeechSynthesisUtterance();
+msg.text = "<%= text %>";
+window.speechSynthesis.speak(msg);
+
+</script>

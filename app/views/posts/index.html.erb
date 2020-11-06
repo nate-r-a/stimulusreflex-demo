@@ -8,3 +8,22 @@
     <%= render partial: "post", collection: @posts %>
   </div>
 </div>
+<script>
+  var voices
+  window.speechSynthesis.onvoiceschanged = function() {
+    voices = window.speechSynthesis.getVoices();
+  };
+
+  // function getRandomInt(max) {
+  //   return Math.floor(Math.random() * Math.floor(max));
+  // }
+
+  document.addEventListener('speak', function(el) {
+    var msg = new SpeechSynthesisUtterance();
+    voices = voices.filter(function(x) { return x.lang.startsWith("en-") })
+    msg.voice = voices[el.detail.voice % voices.length]
+    msg.text = el.detail.message;
+    console.log(msg)
+    window.speechSynthesis.speak(msg);
+  })
+</script>

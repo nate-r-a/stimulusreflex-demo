@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_02_191820) do
+ActiveRecord::Schema.define(version: 2020_11_03_224938) do
 
   create_table "posts", force: :cascade do |t|
-    t.string "username", default: "Cowboard", null: false
+    t.string "username", default: "User", null: false
     t.string "body", null: false
     t.integer "likes_count", default: 0, null: false
     t.integer "reposts_count", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "session_id"
   end
 
 end

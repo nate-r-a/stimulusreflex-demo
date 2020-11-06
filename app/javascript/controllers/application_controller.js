@@ -15,7 +15,19 @@ import StimulusReflex from 'stimulus_reflex'
 export default class extends Controller {
   connect () {
     StimulusReflex.register(this)
+    console.log("Connected")
+
+    
   }
+
+  // speak = (el) => {
+  //   console.log(el)
+
+  //   console.log(el.detail.message)
+  //   // var msg = new SpeechSynthesisUtterance();
+  //   // msg.text = el.detail.message;
+  //   // window.speechSynthesis.speak(msg);
+  // }
 
   /* Application-wide lifecycle methods
    *
